@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 export function MovieDetails() {
   const { movieId } = useParams()
   const [movie, setMovie] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
   const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY_TMDB}`
 
   useEffect(() => {
@@ -11,11 +12,13 @@ export function MovieDetails() {
       const data = await fetch(url)
       const movies = await data.json()
       setMovie(movies)
+      setIsLoading(false)
     }
     fetchMovie()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
-
+  if(isLoading) return <h1>Loading...</h1>
 
   return (
     <>

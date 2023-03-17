@@ -13,16 +13,29 @@ export const Register = () =>{
   const { signup } = useAuth()
   const navigate = useNavigate()
 
+  const getAge = (dateString) => {
+    const today = new Date()
+    const birthDate = new Date(dateString)
+    const age = today.getFullYear() - birthDate.getFullYear()
+
+    return age
+  }
+
   const handleChange = ({target: {name, value}}) => setUser({...user, [name]: value})  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-      await signup(user.email, user.password, user.birthday)
-      navigate("/")
-    }catch(error){
-      setError(error.message)
-    }
+    const validateBirtday = new Date(user.birthday).toISOString().slice(0, 10)
+    if (getAge(validateBirtday) < 18) {
+      alert(`La persona debe ser mayor de 18 años y tiene ${getAge(validateBirtday)} año(s)`)
+    }else{
+      try{
+        await signup(user.email, user.password, user.birthday)
+        navigate("/")
+      }catch(error){
+        setError(error.message)
+      }
+    }    
   }
 
   return(
@@ -63,7 +76,7 @@ export const Register = () =>{
           />
         </div>
         {error && <p>{error}</p>}
-        <button type="submit">
+        <button className="bg-white p-2 rounded" type="submit">
           Register
         </button>
         <div>

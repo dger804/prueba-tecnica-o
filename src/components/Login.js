@@ -48,7 +48,7 @@ export const Login = () =>{
           />
         </div>
         {error && <p>{error}</p>}
-        <button type="submit">
+        <button className="bg-white p-2 rounded" type="submit">
           Login
         </button>
         <div>

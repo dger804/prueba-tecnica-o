@@ -18,7 +18,7 @@ export const NavBar = () => {
           <h1>Welcome {user.email}</h1>
         </div>
         <div>
-          <button onClick={handleLogout}>logout</button>
+          <button className="bg-white p-2 rounded" onClick={handleLogout}>logout</button>
         </div>
         </>
       ) 
