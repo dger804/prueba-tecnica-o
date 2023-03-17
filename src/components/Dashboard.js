@@ -24,7 +24,7 @@ export const Dashboard = () =>{
       <h2>Dashboard</h2>
 
       { popular.map(movie => {
-        return <Movie key={movie.id} movie={movie} />;
+        return <Movie key={movie.id} movie={movie} />
       })}
     </div>
   )
