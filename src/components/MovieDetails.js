@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 export function MovieDetails() {
   const { movieId } = useParams()
   const [movie, setMovie] = useState([])
-  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=de78fe9d134957087dfa9061907e0834`
+  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY_TMDB}`
 
   useEffect(() => {
     fetchMovie()
