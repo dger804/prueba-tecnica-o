@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#acerca-de-la-prueba">Acerca de la prueba</a>
+    </li>
+    <li><a href="#datos-de-interes">Datos de interés</a></li>
+    </li>
+  </ol>
+</details>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Acerca de la Prueba
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+ Se debe crear un aplicativo web con tecnología React Js o la tecnología que vayas a evaluar preferiblemente utilizando hooks. Recursos:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. La pantalla inicial debe ser un inicio de sesión con usuario y contraseña, en caso de no estar registrado debe tener un botón que de la opción de registrarse. El registro debe contener los campos de usuario, email, contraseña, repetir contraseña, fecha de nacimiento.
 
-### `npm test`
+2. Esta fecha de nacimiento debe validar si el usuario es mayor de 18 años para permitir el registro, en caso de ser menor debe enviar una alerta y no permitir el registro.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Luego del inicio de sesión exitoso, debe llevar a un landing donde se debe mostrar un listado de películas. Se debe visualizar la siguiente información:
+-- Imagen de la película
+-- Titulo
 
-### `npm run build`
+4. Consumir las API’s para mostrar las películas
+https://developers.themoviedb.org/3/getting-started/introduction
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. En la parte superior del sitio, debe mostrarse el nombre del usuario logueado y un botón de cerrar sesión que permita salir del sitio y quedar en la pantalla inicial de inicio de sesión
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+6. Al hacer clic en alguna película debe llevar al detalle de esta, donde se visualizará la siguiente información:
+-- Imagen de la película
+-- Titulo
+-- Género
+-- Año de publicación
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+7. El landing debe ser responsive. Se deja a su criterio la presentación de esta información. Puede usar Bootstrap, Materialize o lo que crea necesario para esta prueba.
 
-### `npm run eject`
+## Datos de interés
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
