@@ -80,11 +80,11 @@ export const Register = () =>{
               />
             </div>
             {error && <p>{error}</p>}
-            <button className="bg-white p-2 rounded" type="submit">
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
               Register
             </button>
             <div>
-              Already have an account? <Link to="/">Login here</Link>
+              Already have an account? <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" to="/">Login here</Link>
             </div>
           </form>
         </div>

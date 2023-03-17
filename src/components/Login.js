@@ -52,11 +52,11 @@ export const Login = () =>{
             />
           </div>
           {error && <p>{error}</p>}
-          <button className="bg-white p-2 rounded" type="submit">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
             Login
           </button>
           <div>
-            Don't have an account? Sign Up <Link to="/register">Here</Link>
+            Don't have an account? Sign Up <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" to="/register">Here</Link>
           </div>
         </form>
       </div>
