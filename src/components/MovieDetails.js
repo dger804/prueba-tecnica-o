@@ -7,14 +7,15 @@ export function MovieDetails() {
   const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY_TMDB}`
 
   useEffect(() => {
+    const fetchMovie = async () => {
+      const data = await fetch(url)
+      const movies = await data.json()
+      setMovie(movies)
+    }
     fetchMovie()
   },[])
 
-  const fetchMovie = async () => {
-    const data = await fetch(url)
-    const movies = await data.json()
-    setMovie(movies)
-  }
+
 
   return (
     <>
