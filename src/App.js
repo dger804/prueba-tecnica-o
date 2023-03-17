@@ -7,6 +7,7 @@ import { NavBar } from './components/NavBar';
 import { ProtectedRoute } from './components/ProtectedRoutes';
 import { Register } from './components/Register';
 import { AuthProvider } from './context/authContext';
+import { MovieDetails } from "./components/MovieDetails"
 
 function App() {
   return (
@@ -21,6 +22,14 @@ function App() {
               <Dashboard />
             </ProtectedRoute>
             } 
+          />
+          <Route 
+            path="/:movieId" 
+            element={
+            <ProtectedRoute>
+              <MovieDetails />
+            </ProtectedRoute>
+            }
           />
           <Route path="/Register" element={<Register/>} />
           <Route path="/Login" element={<Login/>} />
