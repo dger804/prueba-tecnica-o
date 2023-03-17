@@ -1,12 +1,29 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth} from "../context/authContext";
 
 export const Login = () =>{
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+    birthday: ""
+  })
+  const [error, setError] = useState()
 
-  const handleSubmit = (e) => {
+  const { login } = useAuth()
+  const navigate = useNavigate()
+
+  const handleChange = ({target: {name, value}}) => setUser({...user, [name]: value})  
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("")
+    try{
+      await login(user.email, user.password)
+      navigate("/")
+    }catch(error){
+      setError(error.message)
+    }
   }
 
   return(
@@ -17,20 +34,20 @@ export const Login = () =>{
         <div>
           <div>Email</div>
           <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            name="email"
+            onChange={handleChange}
           />
         </div>
         <div>
           <div>Password</div>
           <input
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name="password"
+            onChange={handleChange}
           />
         </div>
-
+        {error && <p>{error}</p>}
         <button type="submit">
           Login
         </button>
