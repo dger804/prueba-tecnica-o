@@ -1,19 +1,28 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth} from "../context/authContext";
 
 export const Register = () =>{
   const [user, setUser] = useState({
     email: "",
     password: "",
     birthday: ""
-  })  
+  })
+  const [error, setError] = useState()
+  
+  const { signup } = useAuth()
+  const navigate = useNavigate()
 
   const handleChange = ({target: {name, value}}) => setUser({...user, [name]: value})  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user)
-
+    try{
+      await signup(user.email, user.password, user.birthday)
+      navigate("/")
+    }catch(error){
+      setError(error.message)
+    }
   }
 
   return(
@@ -53,6 +62,7 @@ export const Register = () =>{
             onChange={handleChange}
           />
         </div>
+        {error && <p>{error}</p>}
         <button type="submit">
           Register
         </button>
