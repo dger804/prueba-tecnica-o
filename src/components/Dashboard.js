@@ -20,7 +20,7 @@ export const Dashboard = () =>{
   if(isLoading) return <h1>Loading...</h1>
 
   return (
-    <div>
+    <div className="flex flex-col items-center px-6 pt-12 mx-auto md:h-screen lg:py-0">
       <h2>Dashboard</h2>
 
       { popular.map(movie => {
