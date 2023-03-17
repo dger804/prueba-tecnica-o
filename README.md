@@ -40,4 +40,6 @@ https://developers.themoviedb.org/3/getting-started/introduction
 
 ## Datos de interés
 
-
+Usuario ya creado:
+diego804@gmail.com
+pass: 123456
